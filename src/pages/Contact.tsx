@@ -14,7 +14,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+60 12-345 6789", "+60 3-8765 4321"],
+    details: ["+60 12-380 1275"],
   },
   {
     icon: Mail,
