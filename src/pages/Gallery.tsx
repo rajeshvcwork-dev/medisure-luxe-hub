@@ -5,25 +5,26 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
-import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
-import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
-import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
-import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
-import heroHotelLinen1 from "@/assets/linen-bedsheets-towels.jpg";
+// Dynamically import all images from src/assets using Vite's glob import
+// Note: This uses Vite's import.meta.globEager. If your build tool is different, adjust accordingly.
+const modules = import.meta.globEager("/src/assets/*.{jpg,jpeg,png,webp,svg}");
 
+const galleryImages = Object.keys(modules).map((path) => {
+  const mod = (modules as Record<string, any>)[path];
+  const src = mod?.default ?? mod;
+  const filename = path.split("/").pop() || path;
+  const baseName = filename.replace(/\.(jpg|jpeg|png|webp|svg)$/i, "");
+  const alt = baseName.replace(/[-_]/g, " ");
+  const lower = filename.toLowerCase();
+  let category = "Other";
+  if (lower.includes("hospital")) category = "Hospital Linen";
+  else if (lower.includes("surgical") || lower.includes("ot") || lower.includes("gown")) category = "Surgical Textiles";
+  else if (lower.includes("medical") || lower.includes("uniform") || lower.includes("scrub")) category = "Medical Uniforms";
+  else if (lower.includes("hotel") || lower.includes("linen") || lower.includes("towel")) category = "Hotel Linen";
+  return { src, alt, category };
+});
 
-const galleryImages = [
-  { src: heroHospitalLinen, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
-  { src: heroHospitalLinen, alt: "Premium hospital bedding setup", category: "Hospital Linen" },
-  { src: heroSurgicalTextiles, alt: "Surgical gowns in operating theatre", category: "Surgical Textiles" },
-  { src: heroSurgicalTextiles, alt: "OT textile preparation", category: "Surgical Textiles" },
-  { src: heroMedicalUniforms, alt: "Healthcare staff uniforms", category: "Medical Uniforms" },
-  { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
-  { src: heroHotelLinen, alt: "Luxury hotel bedding", category: "Hotel Linen" },
-  { src: heroHotelLinen1, alt: "Hotel towels and bathrobes", category: "Hotel Linen" },
-];
-
-const categories = ["All", "Hospital Linen", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
+const categories = ["All", ...Array.from(new Set(galleryImages.map((i) => i.category)))];
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
