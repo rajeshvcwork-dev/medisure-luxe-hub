@@ -9,7 +9,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["No. 15-2, Jalan USJ 9/5T", "Subang Jaya, 47620", "Selangor, Malaysia"],
+    details: ["No. 11-2 Jalan PJS 8/12", "Dataran Mentari", "46150 Petaling Jaya", "Selangor, Malaysia"],
   },
   {
     icon: Phone,
