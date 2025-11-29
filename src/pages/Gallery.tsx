@@ -8,17 +8,19 @@ import { cn } from "@/lib/utils";
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
 import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
 import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
+import heroHotelLinen from "@/assets/linen-bedsheets-towels.jpg";
 import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
 
 const galleryImages = [
   { src: heroHospitalLinen, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
+  { src: heroHospitalLinen, alt: "Premium hospital bedding setup", category: "Hospital Linen" },
+  { src: heroSurgicalTextiles, alt: "Surgical gowns in operating theatre", category: "Surgical Textiles" },
+  { src: heroSurgicalTextiles, alt: "OT textile preparation", category: "Surgical Textiles" },
+  { src: heroMedicalUniforms, alt: "Healthcare staff uniforms", category: "Medical Uniforms" },
   { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
   { src: heroHotelLinen, alt: "Luxury hotel bedding", category: "Hotel Linen" },
-  { src: heroSurgicalTextiles, alt: "Surgical gowns in operating theatre", category: "Surgical Textiles" },
-  { src: heroHospitalLinen, alt: "Premium hospital bedding setup", category: "Hospital Linen" },
-  { src: heroMedicalUniforms, alt: "Healthcare staff uniforms", category: "Medical Uniforms" },
   { src: heroHotelLinen, alt: "Hotel towels and bathrobes", category: "Hotel Linen" },
-  { src: heroSurgicalTextiles, alt: "OT textile preparation", category: "Surgical Textiles" },
+  
 ];
 
 const categories = ["All", "Hospital Linen", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
