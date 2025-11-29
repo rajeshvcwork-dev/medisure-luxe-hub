@@ -74,7 +74,7 @@ const Index = () => {
           },
           contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+60-12-345-6789",
+            telephone: "+60-12-380-1275",
             contactType: "sales"
           }
         })}
