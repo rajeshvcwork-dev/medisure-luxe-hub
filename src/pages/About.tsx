@@ -76,8 +76,8 @@ const About = () => {
                   alt="Medisure Healthcare team"
                   className="w-full rounded-2xl shadow-premium-lg"
                 />
-                <div className="absolute -bottom-7 -right-7 bg-primary text-primary-foreground p-7 rounded-xl shadow-premium-md">
-                  <span className="font-heading text-7xl font-bold">Achieving Excellence</span>
+                <div className="absolute -bottom-2 -right-2 bg-primary text-primary-foreground p-2 rounded-xl shadow-premium-md">
+                  <span className="font-heading text-2xl font-bold">Achieving Excellence</span>
                   <p className="font-body text-sm">Thru Service</p>
                 </div>
               </div>
