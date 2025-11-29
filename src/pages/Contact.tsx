@@ -86,8 +86,8 @@ const Contact = () => {
           <AnimatedSection>
             <SectionHeading
               badge="Contact Us"
-              title="Let's Discuss Your Textile Needs"
-              subtitle="Get in touch with our team for quotes, samples, or any inquiries about our healthcare and hospitality textile solutions."
+              title="We’re here to listen, support, and deliver—reach out anytime"
+              subtitle="Get in touch with our team for quotes, fabric samples, or inquiries about our healthcare textiles, hospital linens, medical-grade fabrics, hospitality bedding, and hotel textile solutions. We offer fast support and tailored recommendations for all your textile requirements."
             />
           </AnimatedSection>
         </div>
