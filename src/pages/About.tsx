@@ -77,8 +77,8 @@ const About = () => {
                   className="w-full rounded-2xl shadow-premium-lg"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-premium-md">
-                  <span className="font-heading text-4xl font-bold">Achieving Excellence</span>
-                  <p className="font-body text-sm">Thru Serive</p>
+                  <span className="font-heading text-2xl font-bold">Achieving Excellence</span>
+                  <p className="font-body text-sm">Thru Service</p>
                 </div>
               </div>
             </AnimatedSection>
