@@ -52,7 +52,7 @@ const Contact = () => {
     
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      description: "We appreciate you taking the time to reach out to us. Your message matters, and we look forward to providing you with clear, meaningful guidance.",
     });
     
     setFormData({
