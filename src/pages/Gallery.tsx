@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
 import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
 import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
-import heroHotelLinen from "@/assets/linen-bedsheets-towels.jpg";
+import heroHotelLinen1 from "@/assets/linen-bedsheets-towels.jpg";
 import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
 
 const galleryImages = [
@@ -19,7 +19,7 @@ const galleryImages = [
   { src: heroMedicalUniforms, alt: "Healthcare staff uniforms", category: "Medical Uniforms" },
   { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
   { src: heroHotelLinen, alt: "Luxury hotel bedding", category: "Hotel Linen" },
-  { src: heroHotelLinen, alt: "Hotel towels and bathrobes", category: "Hotel Linen" },
+  { src: heroHotelLinen1, alt: "Hotel towels and bathrobes", category: "Hotel Linen" },
   
 ];
 
