@@ -3,7 +3,7 @@ import { Target, Eye, Heart, Award, Users, Clock } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
-import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
+import heroMedicalUniforms from "@/assets/hospital-hotels-supplier.jpg";
 
 const values = [
   {
