@@ -5,13 +5,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
-import React, { useState } from "react";
-
 interface GalleryCategory {
   title: string;
   folder: string;
 }
 
+// Explicit category list
 const CATEGORIES: GalleryCategory[] = [
   { title: "All", folder: "all" },
   { title: "Hospital Linen", folder: "hospital-linen" },
@@ -19,38 +18,39 @@ const CATEGORIES: GalleryCategory[] = [
   { title: "Uniforms", folder: "uniforms" }
 ];
 
-// Correct import path based on actual structure
-const allImages = import.meta.glob(
-  "../assets/**/*.{png,jpg,jpeg,webp}",
+// Glob imports per folder – GUARANTEED accurate
+const hospitalImages = import.meta.glob(
+  "../assets/hospital-linen/*.{png,jpg,jpeg,webp}",
   { eager: true }
 );
+
+const hotelImages = import.meta.glob(
+  "../assets/hotel-linen/*.{png,jpg,jpeg,webp}",
+  { eager: true }
+);
+
+const uniformImages = import.meta.glob(
+  "../assets/uniforms/*.{png,jpg,jpeg,webp}",
+  { eager: true }
+);
+
+// Assemble image maps
+const imageMap: Record<string, string[]> = {
+  "hospital-linen": Object.values(hospitalImages).map((img: any) => img.default),
+  "hotel-linen": Object.values(hotelImages).map((img: any) => img.default),
+  "uniforms": Object.values(uniformImages).map((img: any) => img.default)
+};
 
 const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const imageMap: Record<string, string[]> = {};
-
-  CATEGORIES.forEach((cat) => {
-    if (cat.folder !== "all") imageMap[cat.folder] = [];
-  });
-
-  // Match: src/assets/<folder>/file.jpg
-  for (const path in allImages) {
-    const img = allImages[path] as any;
-
-    const folderMatch = path.match(/assets\/([^/]+)\//);
-    if (!folderMatch) continue;
-
-    const folder = folderMatch[1];
-
-    if (imageMap[folder]) {
-      imageMap[folder].push(img.default);
-    }
-  }
-
   const imagesToDisplay =
     activeCategory === "all"
-      ? Object.values(imageMap).flat()
+      ? [
+          ...imageMap["hospital-linen"],
+          ...imageMap["hotel-linen"],
+          ...imageMap["uniforms"]
+        ]
       : imageMap[activeCategory] || [];
 
   return (
@@ -67,8 +67,7 @@ const Gallery: React.FC = () => {
               border: "1px solid #ccc",
               cursor: "pointer",
               background: activeCategory === cat.folder ? "#333" : "#fff",
-              color: activeCategory === cat.folder ? "#fff" : "#000",
-              transition: "0.2s"
+              color: activeCategory === cat.folder ? "#fff" : "#000"
             }}
           >
             {cat.title}
@@ -76,7 +75,7 @@ const Gallery: React.FC = () => {
         ))}
       </div>
 
-      {/* GALLERY GRID */}
+      {/* GALLERY */}
       <div
         style={{
           display: "grid",
@@ -91,7 +90,6 @@ const Gallery: React.FC = () => {
             alt="Gallery"
             style={{
               width: "100%",
-              height: "auto",
               borderRadius: "6px",
               boxShadow: "0 2px 6px rgba(0,0,0,0.15)"
             }}
