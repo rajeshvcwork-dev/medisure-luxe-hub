@@ -5,8 +5,6 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
-import React, { useState } from "react";
-
 interface GalleryCategory {
   title: string;
   folder: string;
