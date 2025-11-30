@@ -5,12 +5,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
+import React, { useState } from "react";
+
 interface GalleryCategory {
   title: string;
   folder: string;
 }
 
-// Updated categories – Bath Linen removed
+// Updated categories without gallery folder
 const CATEGORIES: GalleryCategory[] = [
   { title: "All", folder: "all" },
   { title: "Hospital Linen", folder: "hospital-linen" },
@@ -18,28 +20,28 @@ const CATEGORIES: GalleryCategory[] = [
   { title: "Uniforms", folder: "uniforms" }
 ];
 
-// Auto-import all assets
+// Auto-load images directly from /src/assets/<folder>/
 const allImages = import.meta.glob(
-  "/src/assets/gallery/**/*.{png,jpg,jpeg,webp}",
+  "/src/assets/**/*.{png,jpg,jpeg,webp}",
   { eager: true }
 );
 
 const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  // Map: folder → images[]
+  // folder → images[]
   const imageMap: Record<string, string[]> = {};
 
-  // Initialize empty arrays for each category EXCEPT "all"
+  // Initialize arrays for categories
   CATEGORIES.forEach((cat) => {
     if (cat.folder !== "all") imageMap[cat.folder] = [];
   });
 
-  // Distribute images into folders
+  // Match assets/<folder>/image.jpg
   for (const path in allImages) {
     const img = allImages[path] as any;
 
-    const folderMatch = path.match(/gallery\/([^/]+)\//);
+    const folderMatch = path.match(/assets\/([^/]+)\//);
     if (!folderMatch) continue;
 
     const folder = folderMatch[1];
@@ -49,7 +51,7 @@ const Gallery: React.FC = () => {
     }
   }
 
-  // Build display list based on category filter
+  // Build the display list
   const imagesToDisplay =
     activeCategory === "all"
       ? Object.values(imageMap).flat()
