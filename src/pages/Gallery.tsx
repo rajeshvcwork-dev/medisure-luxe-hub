@@ -6,15 +6,11 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
-import Others from "@/assets/bedsheets-towels.jpg";
-import Others from "@/assets/linen-towels.jpg";
 import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
 import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
 import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
 
 const galleryImages = [
-  { src: Others, alt: "Hospital linen and sheets", category: "Others" },
-  { src: Others, alt: "linen and towels", category: "Others" },
   { src: heroHospitalLinen, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
   { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
   { src: heroHotelLinen, alt: "Luxury hotel bedding", category: "Hotel Linen" },
