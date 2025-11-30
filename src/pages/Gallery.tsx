@@ -12,7 +12,6 @@ interface GalleryCategory {
   folder: string;
 }
 
-// Updated categories without gallery folder
 const CATEGORIES: GalleryCategory[] = [
   { title: "All", folder: "all" },
   { title: "Hospital Linen", folder: "hospital-linen" },
@@ -20,24 +19,22 @@ const CATEGORIES: GalleryCategory[] = [
   { title: "Uniforms", folder: "uniforms" }
 ];
 
-// Auto-load images directly from /src/assets/<folder>/
+// Correct import path based on actual structure
 const allImages = import.meta.glob(
-  "/src/assets/**/*.{png,jpg,jpeg,webp}",
+  "../assets/**/*.{png,jpg,jpeg,webp}",
   { eager: true }
 );
 
 const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  // folder → images[]
   const imageMap: Record<string, string[]> = {};
 
-  // Initialize arrays for categories
   CATEGORIES.forEach((cat) => {
     if (cat.folder !== "all") imageMap[cat.folder] = [];
   });
 
-  // Match assets/<folder>/image.jpg
+  // Match: src/assets/<folder>/file.jpg
   for (const path in allImages) {
     const img = allImages[path] as any;
 
@@ -51,7 +48,6 @@ const Gallery: React.FC = () => {
     }
   }
 
-  // Build the display list
   const imagesToDisplay =
     activeCategory === "all"
       ? Object.values(imageMap).flat()
