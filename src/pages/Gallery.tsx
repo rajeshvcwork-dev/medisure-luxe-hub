@@ -5,12 +5,13 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
+import React, { useState } from "react";
+
 interface GalleryCategory {
   title: string;
   folder: string;
 }
 
-// Explicit category list
 const CATEGORIES: GalleryCategory[] = [
   { title: "All", folder: "all" },
   { title: "Hospital Linen", folder: "hospital-linen" },
@@ -18,23 +19,23 @@ const CATEGORIES: GalleryCategory[] = [
   { title: "Uniforms", folder: "uniforms" }
 ];
 
-// Glob imports per folder – GUARANTEED accurate
+// EXACT imports for each folder – guaranteed to work
 const hospitalImages = import.meta.glob(
-  "../assets/hospital-linen/*.{png,jpg,jpeg,webp}",
+  "../assets/hospital-linen/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
 const hotelImages = import.meta.glob(
-  "../assets/hotel-linen/*.{png,jpg,jpeg,webp}",
+  "../assets/hotel-linen/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
 const uniformImages = import.meta.glob(
-  "../assets/uniforms/*.{png,jpg,jpeg,webp}",
+  "../assets/uniforms/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
-// Assemble image maps
+// Convert imported modules to URL arrays
 const imageMap: Record<string, string[]> = {
   "hospital-linen": Object.values(hospitalImages).map((img: any) => img.default),
   "hotel-linen": Object.values(hotelImages).map((img: any) => img.default),
@@ -67,7 +68,8 @@ const Gallery: React.FC = () => {
               border: "1px solid #ccc",
               cursor: "pointer",
               background: activeCategory === cat.folder ? "#333" : "#fff",
-              color: activeCategory === cat.folder ? "#fff" : "#000"
+              color: activeCategory === cat.folder ? "#fff" : "#000",
+              transition: "0.2s"
             }}
           >
             {cat.title}
@@ -75,7 +77,7 @@ const Gallery: React.FC = () => {
         ))}
       </div>
 
-      {/* GALLERY */}
+      {/* GALLERY GRID */}
       <div
         style={{
           display: "grid",
@@ -83,11 +85,11 @@ const Gallery: React.FC = () => {
           gap: "18px"
         }}
       >
-        {imagesToDisplay.map((src, i) => (
+        {imagesToDisplay.map((src, index) => (
           <img
-            key={i}
+            key={index}
             src={src}
-            alt="Gallery"
+            alt="Gallery Item"
             style={{
               width: "100%",
               borderRadius: "6px",
