@@ -6,13 +6,13 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { cn } from "@/lib/utils";
 
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
-import All from "@/assets/bedsheets-towels.jpg";
+import Others from "@/assets/bedsheets-towels.jpg";
 import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
 import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
 import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
 
 const galleryImages = [
-  { src: All, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
+  { src: Others, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
   { src: heroHospitalLinen, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
   { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
   { src: heroHotelLinen, alt: "Luxury hotel bedding", category: "Hotel Linen" },
@@ -23,7 +23,7 @@ const galleryImages = [
   { src: heroSurgicalTextiles, alt: "OT textile preparation", category: "Surgical Textiles" },
 ];
 
-const categories = ["All", "Hospital Linen", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
+const categories = ["All", "Hospital Linen", "Others", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
