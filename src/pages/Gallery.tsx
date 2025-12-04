@@ -10,6 +10,7 @@ import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
 import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
 import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
 
+
 const galleryImages = [
   { src: heroHospitalLinen, alt: "Hospital bed linen and sheets", category: "Hospital Linen" },
   { src: heroMedicalUniforms, alt: "Medical professionals in scrubs", category: "Medical Uniforms" },
