@@ -21,7 +21,7 @@ const galleryImages = [
   { src: heroSurgicalTextiles, alt: "OT textile preparation", category: "Surgical Textiles" },
 ];
 
-const categories = ["All", "Hospital Linen", "Others", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
+const categories = ["All", "Hospital Linen", "Medical Uniforms", "Hotel Linen", "Surgical Textiles"];
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
