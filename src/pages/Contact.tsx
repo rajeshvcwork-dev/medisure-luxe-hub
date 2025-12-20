@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
@@ -15,6 +15,12 @@ const contactInfo = [
     icon: Phone,
     title: "Call Us",
     details: ["+60 12-380 1275"],
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    details: ["+60 12-380 1275"],
+    link: "https://wa.me/60123801275",
   },
   {
     icon: Mail,
@@ -212,22 +218,42 @@ const Contact = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {contactInfo.map((info, index) => (
-                    <div
-                      key={info.title}
-                      className="bg-muted p-6 rounded-xl"
-                    >
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <info.icon className="w-6 h-6 text-primary" />
+                  {contactInfo.map((info) => {
+                    const content = (
+                      <div
+                        key={info.title}
+                        className={`bg-muted p-6 rounded-xl ${info.link ? 'hover:bg-muted/80 transition-colors cursor-pointer' : ''}`}
+                      >
+                        <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${info.title === 'WhatsApp' ? 'bg-green-500/10' : 'bg-primary/10'}`}>
+                          <info.icon className={`w-6 h-6 ${info.title === 'WhatsApp' ? 'text-green-500' : 'text-primary'}`} />
+                        </div>
+                        <h4 className="font-heading font-semibold text-foreground mb-2">{info.title}</h4>
+                        {info.details.map((detail, i) => (
+                          <p key={i} className="font-body text-sm text-muted-foreground">
+                            {detail}
+                          </p>
+                        ))}
+                        {info.link && (
+                          <p className="font-body text-xs text-green-500 mt-2 font-medium">
+                            Click to chat →
+                          </p>
+                        )}
                       </div>
-                      <h4 className="font-heading font-semibold text-foreground mb-2">{info.title}</h4>
-                      {info.details.map((detail, i) => (
-                        <p key={i} className="font-body text-sm text-muted-foreground">
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  ))}
+                    );
+                    
+                    return info.link ? (
+                      <a
+                        key={info.title}
+                        href={info.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {content}
+                      </a>
+                    ) : (
+                      <div key={info.title}>{content}</div>
+                    );
+                  })}
                 </div>
 
                 {/* Map Placeholder */}
