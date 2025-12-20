@@ -257,8 +257,8 @@ const Contact = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="bg-muted rounded-xl overflow-hidden h-64"
-                
+                <div className="bg-muted rounded-xl overflow-hidden h-64">
+                  <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0694849449837!2d101.5833!3d3.0458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMDInNDQuOSJOIDEwMcKwMzUnMDAuMCJF!5e0!3m2!1sen!2smy!4v1234567890"
                     width="100%"
                     height="100%"
@@ -267,7 +267,7 @@ const Contact = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Medisure Healthcare Location"
-                  >
+                  />
                 </div>
               </div>
             </AnimatedSection>
@@ -286,11 +286,11 @@ const Contact = () => {
               For urgent inquiries or bulk orders, call us directly. Our team is available during business hours.
             </p>
             <a
-              href="tel:+60123456789"
+              href="tel:+60 12-380 1275"
               className="inline-flex items-center space-x-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-heading font-semibold hover:bg-primary/90 transition-all shadow-premium-md"
             >
               <Phone className="w-5 h-5" />
-              <span>Call +60 12-345 6789</span>
+              <span>Call +60 12-380 1275</span>
             </a>
           </AnimatedSection>
         </div>
