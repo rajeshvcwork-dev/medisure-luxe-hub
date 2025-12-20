@@ -92,9 +92,10 @@ export const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-background/80 font-body text-sm">
-                  No. 15-2, Jalan USJ 9/5T,<br />
-                  Subang Jaya, 47620<br />
-                  Selangor, Malaysia
+                  11-2 Jalan PJS 8/12,<br />
+                  Dataran Mentari,<br />
+                  46150 Petaling Jaya,<br />
+                  Selongor, Malaysia
                 </span>
               </li>
               <li className="flex items-center space-x-3">
