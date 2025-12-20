@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Products", path: "/products" },
-  { name: "Clients", path: "/clients" },
-  { name: "Product Catalog", path: "/product-catalog" },
   { name: "About Us", path: "/about" },
+  { name: "Clients", path: "/clients" },
+  { name: "Products Detail", path: "/products" },
+  { name: "Product Catalog", path: "/product-catalog" },
   { name: "Contact Us", path: "/contact" },
 ];
 
