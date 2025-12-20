@@ -4,9 +4,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
-import heroMedicalUniforms from "@/assets/uniforms/dress.jpg";
-import heroHotelLinen from "@/assets/hotel-linen/hotelbed.jpg";
-import heroSurgicalTextiles from "@/assets/uniforms/surgicaldress.jpg";
+import heroMedicalUniforms from "@/assets/hospital-staff.jpg";
+import heroHotelLinen from "@/assets/linen-bedsheets-towels.jpg";
+import heroSurgicalTextiles from "@/assets/hospital-uniform.jpg";
 
 const slides = [
   {

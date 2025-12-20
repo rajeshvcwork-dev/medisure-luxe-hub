@@ -8,9 +8,9 @@ import { StrengthCard } from "@/components/StrengthCard";
 import { ClientCarousel } from "@/components/ClientCarousel";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
-import heroMedicalUniforms from "@/assets/uniforms/dress.jpg";
-import heroHotelLinen from "@/assets/hotel-linen/hotelbed.jpg";
-import heroSurgicalTextiles from "@/assets/uniforms/surgicaldress.jpg";
+import heroMedicalUniforms from "@/assets/hospital-staff.jpg";
+import heroHotelLinen from "@/assets/linen-bedsheets-towels.jpg";
+import heroSurgicalTextiles from "@/assets/hospital-uniform.jpg";
 const strengths = [{
   icon: Layers,
   title: "End-to-End Linen Ecosystem",

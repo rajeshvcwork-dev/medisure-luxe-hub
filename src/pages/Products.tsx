@@ -6,8 +6,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 import heroHospitalLinen from "@/assets/hero-hospital-linen.jpg";
 import heroMedicalUniforms from "@/assets/hero-medical-uniforms.jpg";
-import heroHotelLinen from "@/assets/hero-hotel-linen.jpg";
-import heroSurgicalTextiles from "@/assets/hero-surgical-textiles.jpg";
+import heroHotelLinen from "@/assets/linen-bedsheets-towels.jpg";
+import heroSurgicalTextiles from "@/assets/hospital-uniform.jpg";
 
 const products = [
   {
