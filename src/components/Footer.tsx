@@ -99,8 +99,8 @@ export const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+60123456789" className="text-background/80 hover:text-primary transition-colors font-body text-sm">
-                  +60 12-345 6789
+                <a href="tel:+60123801275" className="text-background/80 hover:text-primary transition-colors font-body text-sm">
+                  +60-12 380 1275
                 </a>
               </li>
               <li className="flex items-center space-x-3">
