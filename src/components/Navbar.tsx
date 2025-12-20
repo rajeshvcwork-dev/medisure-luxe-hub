@@ -80,14 +80,14 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+60123456789"
+              href="tel:+60123801275"
               className={cn(
                 "flex items-center space-x-2 font-body text-sm font-medium transition-colors",
                 isScrolled ? "text-foreground" : "text-background"
               )}
             >
               <Phone className="w-4 h-4" />
-              <span>+60 12-345 6789</span>
+              <span>+60 12-380 1275</span>
             </a>
             <Link to="/contact" className="btn-primary text-sm py-3 px-6">
               Get Quote
